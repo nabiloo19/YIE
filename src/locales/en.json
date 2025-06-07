@@ -1,0 +1,104 @@
+{
+  "common": {
+    "language": "English",
+    "languageToggle": "عربي",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "podcasts": "Podcasts", 
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "backToTop": "Back to Top"
+  },
+  "hero": {
+    "title": "Yemenis In Exile",
+    "subtitle": "Sharing the voices and stories of displaced Yemenis around the world through powerful storytelling and digital preservation",
+    "cta": "Listen to the Podcast"
+  },
+  "about": {
+    "title": "About Our Mission",
+    "description": "Yemenis In Exile is a podcast sharing stories of Yemenis around the world. Through intimate conversations and powerful narratives, we preserve the experiences, dreams, and resilience of our diaspora community. Our digital archive serves as a bridge connecting scattered voices and honoring the rich tapestry of Yemeni culture across borders."
+  },
+  "podcast": {
+    "title": "Listen on Your Favorite Platform",
+    "subtitle": "Available on all major podcast platforms"
+  },
+  "projects": {
+    "title": "Other Projects",
+    "subtitle": "Exploring Yemeni stories through various mediums",
+    "items": [
+      {
+        "title": "Virtual Art Exhibition",
+        "description": "Experience our first-ever 3D virtual exhibition showcasing Yemeni artists and their powerful works that reflect the exile experience.",
+        "cta": "Explore Exhibition",
+        "url": "https://artspaces.kunstmatrix.com/en/exhibition/10020142/first-ever-3d-virtual-exhibition-yie-in-collab-with-nerdo"
+      },
+      {
+        "title": "Yaleed Comics",
+        "description": "A visual storytelling project capturing the essence of Yemeni culture through illustrated narratives and character stories.",
+        "cta": "Read Comics",
+        "url": "https://tiny.cc/yaleed_comics"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Listeners Say", 
+    "subtitle": "Stories that resonate across borders",
+    "items": [
+      {
+        "quote": "This podcast gave voice to experiences I thought only I had. It's healing to know we're not alone in our journey.",
+        "author": "Amira Hassan",
+        "location": "Toronto, Canada"
+      },
+      {
+        "quote": "Beautiful storytelling that preserves our culture while acknowledging our struggles. Essential listening.",
+        "author": "Mohammed Al-Rashid", 
+        "location": "London, UK"
+      },
+      {
+        "quote": "Each episode feels like a warm conversation with family. Thank you for creating this safe space.",
+        "author": "Fatima Abdullah",
+        "location": "Melbourne, Australia"
+      },
+      {
+        "quote": "The authenticity and depth of these stories moved me to tears. Powerful work that needs to be heard.",
+        "author": "Ahmed Saleh",
+        "location": "New York, USA"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Share your story or connect with our community",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "subjects": [
+        "General Inquiry",
+        "Share My Story",
+        "Partnership Opportunity",
+        "Media Request",
+        "Technical Support"
+      ]
+    },
+    "info": {
+      "email": "yemenisinexile@gmail.com",
+      "social": "Follow us on social media"
+    }
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Working together to amplify Yemeni voices"
+  },
+  "footer": {
+    "description": "Yemenis In Exile is a podcast and digital archive dedicated to sharing the stories of displaced Yemenis around the world, preserving our culture and connecting our global community.",
+    "copyright": "© {{year}} Yemenis In Exile. All rights reserved."
+  }
+}

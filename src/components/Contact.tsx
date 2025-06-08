@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
-import { Send, Mail, Facebook, Twitter, Instagram, MessageCircle, Sparkles } from 'lucide-react';
+import { Send, Mail, Facebook, X, Instagram, MessageCircle, Sparkles } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const Contact: React.FC = () => {
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-yie-red/20 to-yie-red/5 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
-      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-container mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yie-red/10 to-yie-red/5 rounded-full mb-8">
             <MessageCircle className="text-yie-red" size={16} />
@@ -59,14 +59,14 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Form */}
-          <div className={cn("", isRTL ? 'lg:order-2' : '')}>
-            <div className="relative">
+          <div className={cn("w-full", isRTL ? 'lg:order-2' : '')}>
+            <div className="relative overflow-hidden">
               {/* Form Glow */}
               <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-20" />
               
-              <form onSubmit={handleSubmit} className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-8 border border-border/40 space-y-6">
+              <form onSubmit={handleSubmit} className="relative bg-card/50 backdrop-blur-xl rounded-3xl py-4 sm:p-6 lg:p-8 border border-border/40 space-y-6">
                 <div>
                   <label className={cn("block text-sm font-medium text-foreground mb-3", isRTL ? 'font-arabic' : '')}>
                     {t('contact.form.name')}
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
@@ -106,9 +106,9 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                   >
-                    <option value="" className="bg-background text-foreground">{t('contact.form.subjectPlaceholder')}</option>
+                    <option value="" className="bg-white text-foreground">{t('contact.form.subjectPlaceholder')}</option>
                     {Array.isArray(subjects) && subjects.map((subject: string, index: number) => (
                       <option key={index} value={subject} className="bg-background text-foreground">
                         {subject}
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300 resize-none", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300 resize-none", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>
@@ -144,12 +144,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Information */}
-          <div className={cn("", isRTL ? 'lg:order-1' : '')}>
-            <div className="relative">
+          <div className={cn("w-full", isRTL ? 'lg:order-1' : '')}>
+            <div className="relative overflow-hidden">
               {/* Info Glow */}
               <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-20" />
               
-              <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-8 border border-border/40">
+              <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl py-4 sm:p-6 lg:p-8 border border-border/40">
                 <div className={cn("flex items-center gap-3 mb-8", isRTL ? 'flex-row-reverse' : '')}>
                   <Sparkles className="text-yie-red" size={24} />
                   <h3 className={cn("text-2xl font-bold text-foreground", isRTL ? 'font-arabic' : '')}>
@@ -181,19 +181,18 @@ const Contact: React.FC = () => {
                   
                   <div className="flex gap-4">
                     {[
-                      { icon: Facebook, url: '#', color: 'from-yie-red/80 to-yie-red' },
-                      { icon: Twitter, url: '#', color: 'from-yie-red/70 to-yie-red/90' },
-                      { icon: Instagram, url: '#', color: 'from-yie-red/60 to-yie-red/80' },
+                      { icon: Facebook, url: 'https://www.facebook.com/YIEPodcast/', color: 'from-yie-red/80 to-yie-red' },
+                      { icon: X, url: 'https://twitter.com/YemenisInExile', color: 'from-yie-red/70 to-yie-red/90' },
+                      { icon: Instagram, url: 'https://www.instagram.com/yemenisinexile/', color: 'from-yie-red/60 to-yie-red/80' },
                     ].map((social, index) => (
                       <a
                         key={index}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`group w-16 h-16 bg-gradient-to-r ${social.color} rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 relative overflow-hidden`}
+                        className={`group w-16 h-16 bg-gradient-to-r ${social.color} rounded-2xl flex items-center justify-center transition-all duration-300`}
                       >
-                        <social.icon className="text-yie-light relative z-10 group-hover:scale-110 transition-transform duration-300" size={24} />
-                        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <social.icon className="text-yie-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" size={24} />
                       </a>
                     ))}
                   </div>

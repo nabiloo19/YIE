@@ -3,11 +3,18 @@ import { useTranslation } from '../contexts/TranslationContext';
 import { ExternalLink, Palette, BookOpen, ArrowUpRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
+interface ProjectItem {
+  title: string;
+  description: string;
+  cta: string;
+  url: string;
+}
+
 const Projects: React.FC = () => {
   const { t, isRTL } = useTranslation();
 
   const projectIcons = [Palette, BookOpen];
-  const projectsItems = Array.isArray(t('projects.items')) ? t('projects.items') : [];
+  const projectsItems = (Array.isArray(t('projects.items')) ? t('projects.items') : []) as ProjectItem[];
 
   return (
     <section id="projects" className={cn("py-32 relative overflow-hidden", isRTL ? 'text-right' : 'text-left')}>
@@ -22,10 +29,11 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yie-red/10 to-yie-red/5 rounded-full mb-8">
             <Palette className="text-yie-red" size={16} />
-            <span className="text-yie-red font-medium text-sm">{t('projects.creativeWorks')}</span>
+            <span className="text-yie-red font-medium text-sm">{t('projects.title')}</span>
           </div>
           
           <h2 className={cn(
@@ -42,61 +50,63 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {projectsItems.map((project: any, index: number) => {
-            const Icon = projectIcons[index];
-            return (
-              <div
-                key={index}
-                className="group relative"
-              >
-                {/* Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700" />
-                
-                {/* Card */}
-                <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-10 border border-border/40 hover:border-yie-red/20 transition-all duration-700 transform group-hover:scale-105">
-                  <div className={cn("flex items-start gap-8", isRTL ? 'flex-row-reverse' : '')}>
-                    {/* Icon */}
-                    <div className="flex-shrink-0">
-                      <div className="relative w-20 h-20 bg-gradient-to-br from-yie-red/80 to-yie-red rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                        <Icon className="text-yie-light" size={36} />
-                        
-                        {/* Icon Glow */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-yie-red/20 to-yie-red/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 space-y-6">
-                      <h3 className={cn("text-3xl font-bold text-foreground group-hover:text-yie-red transition-colors duration-300", isRTL ? 'font-arabic' : '')}>
-                        {project.title}
-                      </h3>
-                      
-                      <p className={cn("text-lg text-muted-foreground leading-relaxed", isRTL ? 'font-arabic' : '')}>
-                        {project.description}
-                      </p>
-                      
-                      {/* CTA Button */}
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn("group/btn inline-flex items-center gap-3 bg-gradient-to-r from-yie-red to-yie-red/80 hover:from-yie-red/90 hover:to-yie-red/70 text-yie-light px-8 py-4 rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 hover:shadow-xl", isRTL ? 'flex-row-reverse' : '')}
-                      >
-                        <span>{project.cta}</span>
-                        <ArrowUpRight className="group-hover/btn:scale-125 group-hover/btn:rotate-45 transition-transform duration-300" size={20} />
-                      </a>
-                    </div>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projectsItems.map((project: ProjectItem, index: number) => (
+            <a
+              key={index}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block bg-card/50 backdrop-blur-sm rounded-3xl border border-border/40 hover:border-yie-red/20 transition-all duration-300 overflow-hidden"
+            >
+              {/* Project Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={index === 0 
+                    ? "https://i.ibb.co/v4S5nq6/Clean-Shot-2023-08-22-at-13-46-07-2x.png"
+                    : "https://i.ibb.co/TRcr7WY/1080x1080-Ya-Leed.jpg"
+                  }
+                  alt={project.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="relative p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className={cn(
+                      "text-2xl font-bold text-foreground mb-3 group-hover:text-yie-red transition-colors duration-300",
+                      isRTL ? 'font-arabic' : ''
+                    )}>
+                      {project.title}
+                    </h3>
+                    <p className={cn(
+                      "text-muted-foreground mb-6",
+                      isRTL ? 'font-arabic' : ''
+                    )}>
+                      {project.description}
+                    </p>
                   </div>
-                  
-                  {/* Decorative Elements */}
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="w-2 h-2 bg-gradient-to-r from-yie-red/40 to-yie-red/20 rounded-full animate-ping" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-yie-red/80 to-yie-red rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <ArrowUpRight className="text-yie-light" size={24} />
                   </div>
                 </div>
+
+                {/* CTA Button */}
+                <div className={cn(
+                  "inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-yie-red/10 to-yie-red/5 text-yie-red font-medium group-hover:from-yie-red/20 group-hover:to-yie-red/10 transition-all duration-300",
+                  isRTL ? 'flex-row-reverse' : ''
+                )}>
+                  <span>{project.cta}</span>
+                  <ExternalLink size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                </div>
               </div>
-            );
-          })}
+            </a>
+          ))}
         </div>
       </div>
     </section>

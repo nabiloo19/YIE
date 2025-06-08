@@ -27,11 +27,11 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-yie-red to-yie-red/80 text-yie-light font-medium hover:opacity-90 transition-opacity"
+            href="#podcast"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-yie-red to-yie-red/80 text-yie-light font-bold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
           >
             {t('hero.cta')}
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="group-hover:scale-110 group-hover:translate-x-1 transition-transform duration-300" size={20} />
           </a>
         </div>
       </div>

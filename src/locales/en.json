@@ -119,8 +119,10 @@
   },
   "footer": {
     "description": "Yemenis In Exile is a podcast and digital archive dedicated to sharing the stories of displaced Yemenis around the world, preserving our culture and connecting our global community.",
-    "copyright": "© {{year}} Yemenis In Exile. All rights reserved.",
-    "madeWith": "Made with",
-    "forOurCommunity": "for our community"
-  }
+    "copyright": "© {{year}} Yemenis In Exile. All rights reserved."
+  },
+  "cookies": "This website uses cookies and analytics to ensure you get the best experience.",
+  "haveproblem": "Have a problem with it?",
+  "contactAlert": "Contact us through",
+  "email": "EMAIL"
 }

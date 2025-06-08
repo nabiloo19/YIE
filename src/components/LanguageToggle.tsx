@@ -1,8 +1,13 @@
 import React from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Globe } from 'lucide-react';
+import { cn } from '../lib/utils';
 
-const LanguageToggle: React.FC = () => {
+interface LanguageToggleProps {
+  isInSidebar?: boolean;
+}
+
+const LanguageToggle: React.FC<LanguageToggleProps> = ({ isInSidebar = false }) => {
   const { language, setLanguage, t } = useTranslation();
 
   const toggleLanguage = () => {
@@ -12,10 +17,13 @@ const LanguageToggle: React.FC = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="group flex items-center gap-3 px-6 py-3 rounded-2xl bg-muted/10 hover:bg-muted/20 backdrop-blur-sm transition-all duration-300 text-foreground hover:scale-105 border border-border/40 hover:border-border/80"
+      className={cn(
+        "group flex items-center gap-3 rounded-2xl bg-muted/10 hover:bg-muted/20 backdrop-blur-sm transition-all duration-300 text-foreground hover:scale-105 border border-border/40 hover:border-border/80",
+        isInSidebar ? "px-4 py-2 text-sm" : "px-6 py-3 font-semibold"
+      )}
       aria-label="Toggle Language"
     >
-      <Globe className="group-hover:rotate-180 transition-transform duration-500 text-yie-red" size={20} />
+      <Globe className="group-hover:rotate-180 transition-transform duration-500 text-yie-red" size={isInSidebar ? 16 : 20} />
       <span className="font-semibold">
         {t('common.languageToggle')}
       </span>

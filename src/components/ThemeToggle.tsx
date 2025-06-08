@@ -10,14 +10,14 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="group flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-white hover:scale-105 border border-white/20 hover:border-white/40"
+      className="group flex items-center gap-3 px-6 py-3 rounded-2xl bg-yie-red/10 hover:bg-yie-red/20 backdrop-blur-sm transition-all duration-300 text-yie-light hover:scale-105 border border-yie-red/20 hover:border-yie-red/40"
       aria-label="Toggle Theme"
     >
       <div className="relative">
         {isDark ? (
-          <Sun className="group-hover:rotate-180 group-hover:scale-110 transition-transform duration-500\" size={20} />
+          <Sun className="group-hover:rotate-180 group-hover:scale-110 transition-transform duration-500 text-yie-red" size={20} />
         ) : (
-          <Moon className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500" size={20} />
+          <Moon className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500 text-yie-red" size={20} />
         )}
       </div>
       <span className="font-semibold">

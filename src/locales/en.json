@@ -12,7 +12,8 @@
     "projects": "Projects",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "backToTop": "Back to Top"
+    "backToTop": "Back to Top",
+    "title": "Navigation"
   },
   "hero": {
     "title": "Yemenis In Exile",
@@ -20,8 +21,17 @@
     "cta": "Listen to the Podcast"
   },
   "about": {
-    "title": "About Our Mission",
-    "description": "Yemenis In Exile is a podcast sharing stories of Yemenis around the world. Through intimate conversations and powerful narratives, we preserve the experiences, dreams, and resilience of our diaspora community. Our digital archive serves as a bridge connecting scattered voices and honoring the rich tapestry of Yemeni culture across borders."
+    "mission": "Our Mission",
+    "title": "About Yemenis In Exile",
+    "description": "Yemenis In Exile is a podcast sharing stories of Yemenis around the world. We aim to amplify the voices and experiences of Yemenis who have been displaced or affected by conflict, shedding light on their journeys, challenges, and resilience. This project is a collaborative effort, part of the <a href=\"https://howtobuildup.org/programs/digital-conflict/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yie-red hover:text-yie-red/80 transition-colors\">Digital Conflict program</a>.",
+    "features": {
+      "stories": "Stories of Exile",
+      "storiesDesc": "Sharing personal narratives of Yemenis around the world",
+      "voices": "Amplifying Voices",
+      "voicesDesc": "Highlighting the experiences of those affected by conflict",
+      "resilience": "Community Resilience",
+      "resilienceDesc": "Showcasing the strength and adaptability of our community"
+    }
   },
   "podcast": {
     "title": "Listen on Your Favorite Platform",
@@ -74,11 +84,17 @@
   "contact": {
     "title": "Get In Touch",
     "subtitle": "Share your story or connect with our community",
+    "connectWithUsTag": "Let's Connect",
+    "connectWithUsHeader": "Connect With Us",
     "form": {
       "name": "Full Name",
+      "namePlaceholder": "Your full name",
       "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
       "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
       "message": "Your Message",
+      "messagePlaceholder": "Tell us your story...",
       "submit": "Send Message",
       "subjects": [
         "General Inquiry",
@@ -89,16 +105,22 @@
       ]
     },
     "info": {
+      "emailLabel": "Email",
       "email": "yemenisinexile@gmail.com",
       "social": "Follow us on social media"
     }
   },
   "partners": {
     "title": "Our Partners",
-    "subtitle": "Working together to amplify Yemeni voices"
+    "subtitle": "Working together to amplify Yemeni voices",
+    "collaboration": "Collaboration",
+    "buildupDescription": "Supporting community development and empowerment",
+    "britishCouncilDescription": "Promoting cultural understanding and education"
   },
   "footer": {
     "description": "Yemenis In Exile is a podcast and digital archive dedicated to sharing the stories of displaced Yemenis around the world, preserving our culture and connecting our global community.",
-    "copyright": "© {{year}} Yemenis In Exile. All rights reserved."
+    "copyright": "© {{year}} Yemenis In Exile. All rights reserved.",
+    "madeWith": "Made with",
+    "forOurCommunity": "for our community"
   }
 }

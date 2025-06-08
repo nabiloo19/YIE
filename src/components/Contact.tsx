@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Send, Mail, Facebook, Twitter, Instagram, MessageCircle, Sparkles } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 const Contact: React.FC = () => {
   const { t, isRTL } = useTranslation();
@@ -26,43 +27,48 @@ const Contact: React.FC = () => {
   const subjects = t('contact.form.subjects');
 
   return (
-    <section id="contact" className={`py-32 relative overflow-hidden ${isRTL ? 'text-right' : 'text-left'}`}>
+    <section id="contact" className={cn("py-32 relative overflow-hidden", isRTL ? 'text-right' : 'text-left')}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 dark:from-black dark:via-slate-900 dark:to-purple-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
       
       {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-yie-red/40 to-yie-red/20 rounded-full blur-3xl animate-blob" />
+        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-yie-red/30 to-yie-red/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-yie-red/20 to-yie-red/5 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-            <MessageCircle className="text-purple-400" size={16} />
-            <span className="text-white font-medium text-sm">Let's Connect</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yie-red/10 to-yie-red/5 rounded-full mb-8">
+            <MessageCircle className="text-yie-red" size={16} />
+            <span className="text-yie-red font-medium text-sm">{t('contact.connectWithUsTag')}</span>
           </div>
           
-          <h2 className={`text-5xl md:text-6xl font-black mb-8 text-white leading-tight ${isRTL ? 'font-arabic' : ''}`}>
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
-              {t('contact.title')}
-            </span>
+          <h2 className={cn(
+            "text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-foreground leading-tight",
+            isRTL ? 'font-arabic' : ''
+          )}>
+            {t('contact.title')}
           </h2>
-          <p className={`text-xl text-gray-300 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : ''}`}>
+          <p className={cn(
+            "text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto",
+            isRTL ? 'font-arabic' : ''
+          )}>
             {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className={`${isRTL ? 'lg:order-2' : ''}`}>
+          <div className={cn("", isRTL ? 'lg:order-2' : '')}>
             <div className="relative">
               {/* Form Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-20" />
               
-              <form onSubmit={handleSubmit} className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 space-y-6">
+              <form onSubmit={handleSubmit} className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-8 border border-border/40 space-y-6">
                 <div>
-                  <label className={`block text-sm font-medium text-gray-300 mb-3 ${isRTL ? 'font-arabic' : ''}`}>
+                  <label className={cn("block text-sm font-medium text-foreground mb-3", isRTL ? 'font-arabic' : '')}>
                     {t('contact.form.name')}
                   </label>
                   <input
@@ -71,13 +77,13 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-6 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${isRTL ? 'text-right' : 'text-left'}`}
-                    placeholder="Your full name"
+                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-medium text-gray-300 mb-3 ${isRTL ? 'font-arabic' : ''}`}>
+                  <label className={cn("block text-sm font-medium text-foreground mb-3", isRTL ? 'font-arabic' : '')}>
                     {t('contact.form.email')}
                   </label>
                   <input
@@ -86,13 +92,13 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-6 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${isRTL ? 'text-right' : 'text-left'}`}
-                    placeholder="your@email.com"
+                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-medium text-gray-300 mb-3 ${isRTL ? 'font-arabic' : ''}`}>
+                  <label className={cn("block text-sm font-medium text-foreground mb-3", isRTL ? 'font-arabic' : '')}>
                     {t('contact.form.subject')}
                   </label>
                   <select
@@ -100,11 +106,11 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-6 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${isRTL ? 'text-right' : 'text-left'}`}
+                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                   >
-                    <option value="" className="bg-gray-800 text-white">{t('contact.form.subject')}</option>
+                    <option value="" className="bg-background text-foreground">{t('contact.form.subjectPlaceholder')}</option>
                     {Array.isArray(subjects) && subjects.map((subject: string, index: number) => (
-                      <option key={index} value={subject} className="bg-gray-800 text-white">
+                      <option key={index} value={subject} className="bg-background text-foreground">
                         {subject}
                       </option>
                     ))}
@@ -112,7 +118,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className={`block text-sm font-medium text-gray-300 mb-3 ${isRTL ? 'font-arabic' : ''}`}>
+                  <label className={cn("block text-sm font-medium text-foreground mb-3", isRTL ? 'font-arabic' : '')}>
                     {t('contact.form.message')}
                   </label>
                   <textarea
@@ -121,14 +127,14 @@ const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className={`w-full px-6 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none ${isRTL ? 'text-right' : 'text-left'}`}
-                    placeholder="Tell us your story..."
+                    className={cn("w-full px-6 py-4 rounded-2xl border border-input bg-input text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300 resize-none", isRTL ? 'text-right' : 'text-left')}
+                    placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className={`group w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:from-purple-400 hover:via-pink-400 hover:to-cyan-400 text-white px-8 py-5 rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}
+                  className={cn("group w-full bg-gradient-to-r from-yie-red to-yie-red/80 hover:from-yie-red/90 hover:to-yie-red/70 text-yie-light px-8 py-5 rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-3", isRTL ? 'flex-row-reverse' : '')}
                 >
                   <Send className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" size={20} />
                   <span>{t('contact.form.submit')}</span>
@@ -138,29 +144,29 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Information */}
-          <div className={`${isRTL ? 'lg:order-1' : ''}`}>
+          <div className={cn("", isRTL ? 'lg:order-1' : '')}>
             <div className="relative">
               {/* Info Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-20" />
               
-              <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-                <div className="flex items-center gap-3 mb-8">
-                  <Sparkles className="text-cyan-400" size={24} />
-                  <h3 className={`text-2xl font-bold text-white ${isRTL ? 'font-arabic' : ''}`}>
-                    Connect With Us
+              <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-8 border border-border/40">
+                <div className={cn("flex items-center gap-3 mb-8", isRTL ? 'flex-row-reverse' : '')}>
+                  <Sparkles className="text-yie-red" size={24} />
+                  <h3 className={cn("text-2xl font-bold text-foreground", isRTL ? 'font-arabic' : '')}>
+                    {t('contact.connectWithUsHeader')}
                   </h3>
                 </div>
 
                 {/* Email */}
-                <div className={`flex items-center gap-6 mb-12 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center">
-                    <Mail className="text-white" size={24} />
+                <div className={cn("flex items-center gap-6 mb-12", isRTL ? 'flex-row-reverse' : '')}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-yie-red/80 to-yie-red rounded-2xl flex items-center justify-center">
+                    <Mail className="text-yie-light" size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 mb-1">Email</p>
+                    <p className="text-sm text-muted-foreground mb-1">{t('contact.info.emailLabel')}</p>
                     <a
                       href="mailto:yemenisinexile@gmail.com"
-                      className="text-xl font-semibold text-white hover:text-cyan-400 transition-colors duration-300"
+                      className="text-xl font-semibold text-foreground hover:text-yie-red transition-colors duration-300"
                     >
                       {t('contact.info.email')}
                     </a>
@@ -169,15 +175,15 @@ const Contact: React.FC = () => {
 
                 {/* Social Media */}
                 <div className="space-y-6">
-                  <h4 className={`text-lg font-semibold text-white mb-6 ${isRTL ? 'font-arabic' : ''}`}>
+                  <h4 className={cn("text-lg font-semibold text-foreground mb-6", isRTL ? 'font-arabic' : '')}>
                     {t('contact.info.social')}
                   </h4>
                   
                   <div className="flex gap-4">
                     {[
-                      { icon: Facebook, url: '#', color: 'from-blue-500 to-blue-600' },
-                      { icon: Twitter, url: '#', color: 'from-sky-400 to-sky-500' },
-                      { icon: Instagram, url: '#', color: 'from-pink-500 to-rose-500' },
+                      { icon: Facebook, url: '#', color: 'from-yie-red/80 to-yie-red' },
+                      { icon: Twitter, url: '#', color: 'from-yie-red/70 to-yie-red/90' },
+                      { icon: Instagram, url: '#', color: 'from-yie-red/60 to-yie-red/80' },
                     ].map((social, index) => (
                       <a
                         key={index}
@@ -186,8 +192,8 @@ const Contact: React.FC = () => {
                         rel="noopener noreferrer"
                         className={`group w-16 h-16 bg-gradient-to-r ${social.color} rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 relative overflow-hidden`}
                       >
-                        <social.icon className="text-white relative z-10 group-hover:scale-110 transition-transform duration-300" size={24} />
-                        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <social.icon className="text-yie-light relative z-10 group-hover:scale-110 transition-transform duration-300" size={24} />
+                        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </a>
                     ))}
                   </div>

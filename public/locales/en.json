@@ -59,26 +59,19 @@
     "title": "What Our Listeners Say", 
     "subtitle": "Stories that resonate across borders",
     "items": [
-      {
-        "quote": "This podcast gave voice to experiences I thought only I had. It's healing to know we're not alone in our journey.",
-        "author": "Amira Hassan",
-        "location": "Toronto, Canada"
-      },
-      {
-        "quote": "Beautiful storytelling that preserves our culture while acknowledging our struggles. Essential listening.",
-        "author": "Mohammed Al-Rashid", 
-        "location": "London, UK"
-      },
-      {
-        "quote": "Each episode feels like a warm conversation with family. Thank you for creating this safe space.",
-        "author": "Fatima Abdullah",
-        "location": "Melbourne, Australia"
-      },
-      {
-        "quote": "The authenticity and depth of these stories moved me to tears. Powerful work that needs to be heard.",
-        "author": "Ahmed Saleh",
-        "location": "New York, USA"
-      }
+      { "quote": "Did you know that writing about the experiences of Yemenis in exile is a narrative that parallels the narrative of the war that Yemenis live through inside the country?" },
+      { "quote": "The story of Mariam, in my opinion, is really what this project is about. Women empowerment, a supportive husband, peace in the midst of war. How love conquers all. Really love it!" },
+      { "quote": "I heard the first part and melted. Thank you so much for all your hard work. I am so proud of you." },
+      { "quote": "I liked the idea of having more than one person comment and the conversation moving between people. It made listening to the podcast easy, so that no one person dominates the conversation for too long and bores the listener. It was also nice to hear other Yemenis talk about how the war and its news affected them while living abroad. Their experiences are very close to those of many expatriates." },
+      { "quote": "It's great that you worked on the stories from a humanitarian perspective, because politics distances people's empathy." },
+      { "quote": "I just listened to the podcast. Well done! It brought back horrific memories." },
+      { "quote": "A friend contacted me after listening to the stories and I found him reaching out to me very emotionally, which is unusual for him. I asked him what's up, and he said he just listened to your story." },
+      { "quote": "I wish you success and that your voice reaches the suffering of the Yemeni people." },
+      { "quote": "Keep doing nice things like this." },
+      { "quote": "You can't imagine how much distress I felt after listening to the stories." },
+      { "quote": "Thank you guys. We need it, please keep it up." },
+      { "quote": "I just finished listening to the podcast. Great job on all the episodes. Very sorrowful stories." },
+      { "quote": "The stories are heartbreaking, I swear to God, but I salute you for the work." }
     ]
   },
   "contact": {

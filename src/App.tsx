@@ -5,6 +5,7 @@ import { useTranslation } from './contexts/TranslationContext';
 import { Navbar } from './components/ui/navbar';
 import CookieConsent from './components/CookieConsent';
 import BackToTopButton from './components/BackToTopButton';
+import { Toaster } from 'react-hot-toast';
 
 // Utility to add a delay to lazy loading
 const lazyWithDelay = (importFunc: () => Promise<{ default: React.ComponentType<any> }>, delay = 300) =>
@@ -54,6 +55,7 @@ function App() {
     <ThemeProvider>
       <TranslationProvider>
         <AppContent />
+        <Toaster position="bottom-center" reverseOrder={false} />
       </TranslationProvider>
     </ThemeProvider>
   );

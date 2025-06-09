@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Send, Mail, Facebook, X, Instagram, MessageCircle, Sparkles } from 'lucide-react';
 import { cn } from '../lib/utils';
+import toast from 'react-hot-toast';
 
 const Contact: React.FC = () => {
   const { t, isRTL } = useTranslation();
@@ -22,6 +23,13 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    toast.success(t('contact.form.submitSuccess'));
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
   const subjects = t('contact.form.subjects');
@@ -77,7 +85,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 px-5 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
@@ -92,7 +100,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 px-5 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
@@ -106,7 +114,7 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 px-5 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300", isRTL ? 'text-right' : 'text-left')}
                   >
                     <option value="" className="bg-white text-foreground">{t('contact.form.subjectPlaceholder')}</option>
                     {Array.isArray(subjects) && subjects.map((subject: string, index: number) => (
@@ -127,7 +135,7 @@ const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className={cn("w-full py-4 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300 resize-none", isRTL ? 'text-right' : 'text-left')}
+                    className={cn("w-full py-4 px-5 rounded-2xl border border-gray-200 bg-white shadow-sm text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300 resize-none", isRTL ? 'text-right' : 'text-left')}
                     placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>

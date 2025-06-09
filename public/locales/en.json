@@ -102,7 +102,9 @@
         "Partnership Opportunity",
         "Media Request",
         "Technical Support"
-      ]
+      ],
+      "submitSuccess": "Message sent successfully!",
+      "submitError": "Failed to send message. Please try again later."
     },
     "info": {
       "emailLabel": "Email",
@@ -113,9 +115,7 @@
   "partners": {
     "title": "Our Partners",
     "subtitle": "Working together to amplify Yemeni voices",
-    "collaboration": "Collaboration",
-    "buildupDescription": "Supporting community development and empowerment",
-    "britishCouncilDescription": "Promoting cultural understanding and education"
+    "collaboration": "Collaboration"
   },
   "footer": {
     "description": "Yemenis In Exile is a podcast and digital archive dedicated to sharing the stories of displaced Yemenis around the world, preserving our culture and connecting our global community.",

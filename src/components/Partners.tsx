@@ -62,13 +62,6 @@ const Partners: React.FC = () => {
                 />
               </div>
               
-              <p className={cn(
-                "text-lg text-muted-foreground leading-relaxed text-center",
-                isRTL ? 'font-arabic' : ''
-              )}>
-                {t('partners.buildupDescription')}
-              </p>
-              
               {/* Progress Bar */}
               <div className={cn("mt-8 w-full h-1 bg-gradient-to-r from-yie-red/40 to-yie-red/20 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left")} />
               
@@ -98,13 +91,6 @@ const Partners: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              
-              <p className={cn(
-                "text-lg text-muted-foreground leading-relaxed text-center",
-                isRTL ? 'font-arabic' : ''
-              )}>
-                {t('partners.britishCouncilDescription')}
-              </p>
               
               {/* Progress Bar */}
               <div className={cn("mt-8 w-full h-1 bg-gradient-to-r from-yie-red/40 to-yie-red/20 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left")} />

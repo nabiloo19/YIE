@@ -28,14 +28,14 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   const loadTranslations = async (lang: 'en' | 'ar') => {
     try {
-      const response = await fetch(`/src/locales/${lang}.json`);
+      const response = await fetch(`/locales/${lang}.json`);
       const data = await response.json();
       setTranslations(data);
     } catch (error) {
       console.error('Failed to load translations:', error);
       // Fallback to English if translation loading fails
       if (lang !== 'en') {
-        const fallbackResponse = await fetch('/src/locales/en.json');
+        const fallbackResponse = await fetch('/locales/en.json');
         const fallbackData = await fallbackResponse.json();
         setTranslations(fallbackData);
       }

@@ -48,16 +48,10 @@ const CookieConsent: React.FC = () => {
             {/* Content */}
             <div className={cn("flex-1", isRTL ? 'text-right' : 'text-left')}>
               <p className="text-foreground mb-2">
-                {t('cookies')}
+                {t('cookies.title')}
               </p>
               <p className="text-sm text-muted-foreground">
-                {t('haveproblem')} {t('contactAlert')}{' '}
-                <a 
-                  href="mailto:yemenisinexile@gmail.com" 
-                  className="text-yie-red hover:text-yie-red/80 transition-colors duration-300 font-medium"
-                >
-                  {t('email')}
-                </a>
+                {t('cookies.message')}
               </p>
             </div>
 
@@ -67,13 +61,13 @@ const CookieConsent: React.FC = () => {
                 onClick={handleAccept}
                 className="px-4 py-2 rounded-lg bg-yie-red text-yie-light hover:bg-yie-red/90 transition-colors duration-200 text-sm font-medium"
               >
-                {t('cookieConsent.accept') || 'Accept'}
+                {t('cookies.accept')}
               </button>
               <button
                 onClick={handleDecline}
                 className="px-4 py-2 rounded-lg border border-border/60 text-foreground hover:bg-muted transition-colors duration-200 text-sm font-medium"
               >
-                {t('cookieConsent.decline') || 'Decline'}
+                {t('cookies.decline')}
               </button>
             </div>
           </div>

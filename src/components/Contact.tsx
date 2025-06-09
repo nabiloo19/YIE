@@ -12,6 +12,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,16 +21,31 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast.success(t('contact.form.submitSuccess'));
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+    setLoading(true);
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzQv-FaVo8hVCJPE_0TV_sX1swnIoGTMqgpqYKyOeTVh7unxPFbzeUFN9pa4kPDGXcc/exec';
+    const params = new URLSearchParams({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      timestamp: new Date().toISOString(),
     });
+    try {
+      const response = await fetch(`${scriptUrl}?${params.toString()}`);
+      const result = await response.json();
+      if (result.status === 'success') {
+        toast.success(t('contact.form.submitSuccess'));
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast.error(t('contact.form.submitError'));
+      }
+    } catch (error) {
+      toast.error(t('contact.form.submitError'));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const subjects = t('contact.form.subjects');
@@ -143,8 +159,16 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   className={cn("group w-full bg-gradient-to-r from-yie-red to-yie-red/80 hover:from-yie-red/90 hover:to-yie-red/70 text-yie-light px-8 py-5 rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-3", isRTL ? 'flex-row-reverse' : '')}
+                  disabled={loading}
                 >
-                  <Send className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" size={20} />
+                  {loading ? (
+                    <svg className="animate-spin h-5 w-5 mr-2 text-yie-light" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                    </svg>
+                  ) : (
+                    <Send className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" size={20} />
+                  )}
                   <span>{t('contact.form.submit')}</span>
                 </button>
               </form>

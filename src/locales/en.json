@@ -124,5 +124,9 @@
   "cookies": "This website uses cookies and analytics to ensure you get the best experience.",
   "haveproblem": "Have a problem with it?",
   "contactAlert": "Contact us through",
-  "email": "EMAIL"
+  "email": "EMAIL",
+  "cookieConsent": {
+    "accept": "Accept",
+    "decline": "Decline"
+  }
 }

@@ -2,22 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { X, Cookie } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { enableAnalytics, disableAnalytics } from '../lib/firebase';
 
 const CookieConsent: React.FC = () => {
   const { t, isRTL } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user has already dismissed the alert
-    const hasDismissed = localStorage.getItem('cookieConsentDismissed');
-    if (!hasDismissed) {
+    // Check if user has already made a choice
+    const consentStatus = localStorage.getItem('cookieConsentStatus');
+    if (!consentStatus) {
       setIsVisible(true);
     }
   }, []);
 
-  const handleDismiss = () => {
+  const handleAccept = () => {
     setIsVisible(false);
-    localStorage.setItem('cookieConsentDismissed', 'true');
+    localStorage.setItem('cookieConsentStatus', 'accepted');
+    enableAnalytics();
+    console.log("User accepted cookies. Analytics can be initialized.");
+  };
+
+  const handleDecline = () => {
+    setIsVisible(false);
+    localStorage.setItem('cookieConsentStatus', 'declined');
+    disableAnalytics();
+    console.log("User declined cookies. Analytics should not be initialized.");
   };
 
   if (!isVisible) return null;
@@ -51,14 +61,21 @@ const CookieConsent: React.FC = () => {
               </p>
             </div>
 
-            {/* Dismiss Button */}
-            <button
-              onClick={handleDismiss}
-              className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-200 flex-shrink-0"
-              aria-label="Dismiss cookie consent"
-            >
-              <X size={20} />
-            </button>
+            {/* Action Buttons */}
+            <div className="flex gap-3 mt-4 md:mt-0">
+              <button
+                onClick={handleAccept}
+                className="px-4 py-2 rounded-lg bg-yie-red text-yie-light hover:bg-yie-red/90 transition-colors duration-200 text-sm font-medium"
+              >
+                {t('cookieConsent.accept') || 'Accept'}
+              </button>
+              <button
+                onClick={handleDecline}
+                className="px-4 py-2 rounded-lg border border-border/60 text-foreground hover:bg-muted transition-colors duration-200 text-sm font-medium"
+              >
+                {t('cookieConsent.decline') || 'Decline'}
+              </button>
+            </div>
           </div>
         </div>
       </div>

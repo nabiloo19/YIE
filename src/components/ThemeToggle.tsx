@@ -16,8 +16,8 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ isInSidebar = false }) => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "group flex items-center gap-3 rounded-2xl bg-yie-red/10 hover:bg-yie-red/20 backdrop-blur-sm transition-all duration-300 text-yie-light hover:scale-105 border border-yie-red/20 hover:border-yie-red/40",
-        isInSidebar ? "px-4 py-2 text-sm" : "px-6 py-3 font-semibold"
+        "group flex items-center gap-3 rounded-2xl bg-yie-red/10 hover:bg-yie-red/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-yie-red/20 hover:border-yie-red/40",
+        isInSidebar ? "px-4 py-2 text-sm" : "px-6 py-3"
       )}
       aria-label="Toggle Theme"
     >
@@ -28,7 +28,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ isInSidebar = false }) => {
           <Moon className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500 text-yie-red" size={isInSidebar ? 16 : 20} />
         )}
       </div>
-      <span className="font-semibold">
+      <span className={cn(isDark ? "text-yie-light" : "text-foreground", isInSidebar ? "" : "font-normal")}>
         {isDark ? t('common.lightMode') : t('common.darkMode')}
       </span>
     </button>

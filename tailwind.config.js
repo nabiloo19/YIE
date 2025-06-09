@@ -54,6 +54,8 @@ export default {
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'marquee': 'marquee var(--duration) linear infinite',
+        'blob': 'blob 7s infinite',
+        'gradient-x': 'gradient-x 15s ease infinite',
       },
       keyframes: {
         'animation-delay-2000': {
@@ -67,7 +69,21 @@ export default {
         'marquee': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-100% - var(--gap)))' }
-        }
+        },
+        'blob': {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1) rotate(0deg)',
+          },
+          '33%': {
+            transform: 'translate(50px, -80px) scale(1.2) rotate(120deg)',
+          },
+          '66%': {
+            transform: 'translate(-40px, 40px) scale(0.8) rotate(240deg)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1) rotate(360deg)',
+          },
+        },
       },
     },
   },

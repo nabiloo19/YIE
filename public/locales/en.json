@@ -97,7 +97,8 @@
         "Technical Support"
       ],
       "submitSuccess": "Message sent successfully!",
-      "submitError": "Failed to send message. Please try again later."
+      "submitError": "Failed to send message. Please try again later.",
+      "validationError": "Please fill in all fields."
     },
     "info": {
       "emailLabel": "Email",

@@ -23,6 +23,11 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast.error(t('contact.form.validationError') || 'Please fill in all fields.');
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbzQv-FaVo8hVCJPE_0TV_sX1swnIoGTMqgpqYKyOeTVh7unxPFbzeUFN9pa4kPDGXcc/exec';
     const params = new URLSearchParams({

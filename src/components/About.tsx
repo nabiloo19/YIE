@@ -75,10 +75,10 @@ const About: React.FC = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="group relative p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/40 hover:border-yie-red/20 transition-all duration-300"
+                  className="group relative p-6 bg-card/60 backdrop-blur-xl rounded-2xl border-2 border-border/60 shadow-md hover:border-yie-red/80 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 cursor-pointer"
                 >
                   <div className={cn(
-                    "w-12 h-12 bg-gradient-to-r rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300",
+                    "w-12 h-12 bg-gradient-to-r rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300",
                     feature.color
                   )}>
                     <feature.icon className="text-yie-light" size={20} />

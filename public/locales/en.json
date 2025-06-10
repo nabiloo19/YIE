@@ -23,7 +23,7 @@
   "about": {
     "mission": "Our Mission",
     "title": "About Yemenis In Exile",
-    "description": "Yemenis In Exile is a podcast sharing stories of Yemenis around the world. We aim to amplify the voices and experiences of Yemenis who have been displaced or affected by conflict, shedding light on their journeys, challenges, and resilience. This project is a collaborative effort, part of the <a href=\"https://howtobuildup.org/programs/digital-conflict/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yie-red hover:text-yie-red/80 transition-colors\">Digital Conflict program</a>.",
+    "description": "Yemenis In Exile is a podcast sharing stories of Yemenis around the world. We aim to amplify the voices and experiences of Yemenis who have been displaced or affected by conflict, shedding light on their journeys, challenges, and resilience. This project is a collaborative effort, part of the <a href=\"https://howtobuildup.org/programs/digital-conflict/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yie-red underline decoration-yie-red decoration-2\">Digital Conflict program</a>.",
     "features": {
       "stories": "Stories of Exile",
       "storiesDesc": "Sharing personal narratives of Yemenis around the world",

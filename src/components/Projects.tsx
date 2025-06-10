@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block bg-card/50 backdrop-blur-sm rounded-3xl border border-border/40 hover:border-yie-red/20 transition-all duration-300 overflow-hidden"
+              className="group relative block bg-card/50 backdrop-blur-sm rounded-3xl border border-border/40 transition-shadow duration-300 overflow-hidden hover:shadow-xl"
             >
               {/* Project Image */}
               <div className="relative aspect-[4/3] overflow-hidden">

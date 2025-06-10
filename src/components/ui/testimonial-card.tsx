@@ -31,7 +31,7 @@ export function TestimonialCard({
         "p-4 text-start sm:p-6",
         "hover:from-muted/60 hover:to-muted/20",
         "max-w-[320px] sm:max-w-[320px]",
-        "transition-colors duration-300",
+        "transition-all duration-300 hover:shadow-md",
         className
       )}
     >

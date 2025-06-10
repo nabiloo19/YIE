@@ -138,3 +138,20 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #ba4342/90, #ba4342/70);
 }
+
+/* Animated underline for about section link */
+.group\/underline-link:hover span::after {
+  transform: scaleX(1);
+}
+.group\/underline-link span::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #ba4342;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  margin-top: 2px;
+}

@@ -53,7 +53,7 @@ const Partners: React.FC = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700" />
             
             {/* Card */}
-            <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-10 border border-border/40 hover:border-yie-red/20 transition-all duration-700 transform group-hover:scale-105">
+            <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-10 border border-border/40 transition-shadow duration-300 hover:shadow-xl">
               <div className="relative w-48 h-24 mb-8 mx-auto">
                 <img
                   src="https://howtobuildup.org/wp-content/uploads/sites/3/2020/08/buildup-1.png"
@@ -83,7 +83,7 @@ const Partners: React.FC = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-yie-red/20 to-yie-red/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-700" />
             
             {/* Card */}
-            <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-10 border border-border/40 hover:border-yie-red/20 transition-all duration-700 transform group-hover:scale-105">
+            <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-10 border border-border/40 transition-shadow duration-300 hover:shadow-xl">
               <div className="relative w-48 h-24 mb-8 mx-auto">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/1/19/British_Council_logo.svg"

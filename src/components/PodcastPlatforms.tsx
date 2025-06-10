@@ -26,99 +26,92 @@ const PodcastPlatforms: React.FC = () => {
       name: 'Google Podcast', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjgzOTA1ODg2OC9zb3VuZHMucnNz?sa=X&ved=2ahUKEwinxrqq9IbsAhUG4hoKHffsB8oQ9sEGegQIARAC', 
-      delay: '100ms',
+      delay: '50ms',
       logo: 'https://img.icons8.com/color/144/000000/google-podcasts.png'
     },
     { 
       name: 'Apple Podcast', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://podcasts.apple.com/ye/podcast/yemenis-in-exile-podcast/id1530275893', 
-      delay: '200ms',
+      delay: '100ms',
       logo: 'https://i.ibb.co/Qcy6KP1/podcast.png'
     },
     { 
       name: 'Anghami', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://play.anghami.com/album/1016273709', 
-      delay: '300ms',
+      delay: '150ms',
       logo: 'https://i.ibb.co/dt4xBLc/Anghami-logo-New.png'
     },
     { 
       name: 'Spotify', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://open.spotify.com/show/1iAqervKoNOF1coPIgy6Nl', 
-      delay: '400ms',
+      delay: '200ms',
       logo: 'https://i.ibb.co/9c85fJk/spotify-removebg-preview.png'
     },
     { 
       name: 'CastBox', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://castbox.fm/channel/Yemenis-In-Exile-Podcast-id3314567', 
-      delay: '500ms',
+      delay: '250ms',
       logo: 'https://i.ibb.co/k6VkC0v/castbox-icon.png'
     },
     { 
       name: 'iHeart Radio', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.iheart.com/podcast/966-yemenis-in-exile-podcast-76474715/', 
-      delay: '600ms',
+      delay: '300ms',
       logo: 'https://i.ibb.co/GVkvC2L/iheart-Radio.png'
     },
     { 
       name: 'Deezer', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.deezer.com/show/2115012', 
-      delay: '700ms',
+      delay: '350ms',
       logo: 'https://i.ibb.co/5WFhK8t/deezer-Logo.png'
     },
     { 
       name: 'Spreaker', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.spreaker.com/show/yemenis-in-exile-podcast', 
-      delay: '800ms',
+      delay: '400ms',
       logo: 'https://i.ibb.co/pWsZC3n/spreaker-Logo.png'
     },
     { 
       name: 'PodBay', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://podbay.fm/p/yemenis-in-exile-podcast', 
-      delay: '900ms',
+      delay: '450ms',
       logo: 'https://i.ibb.co/zXBKnpz/podbay-Logo.jpg'
     },
     { 
       name: 'PodParadise', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.podparadise.com/Podcast/1530275893', 
-      delay: '1000ms',
+      delay: '500ms',
       logo: 'https://i.ibb.co/nkNc89s/Pod-Pradaise.png'
     },
     { 
       name: 'ListenNotes', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.listennotes.com/podcasts/yemenis-in-exile-podcast-yemenis-in-exile-2vj7ZpyQeKD/', 
-      delay: '1100ms',
+      delay: '550ms',
       logo: 'https://i.ibb.co/YQBkhTk/Listen-Notes-Pic-removebg-preview.png'
     },
     { 
       name: 'PodcastAddict', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://podcastaddict.com/podcast/3195831', 
-      delay: '1200ms',
+      delay: '600ms',
       logo: 'https://i.ibb.co/LN1Zs94/podcast-Addict.png'
     },
     { 
       name: 'PodChaser', 
       color: 'from-yie-red to-yie-red/80', 
       url: 'https://www.podchaser.com/podcasts/yemenis-in-exile-podcast-1573299', 
-      delay: '1300ms',
+      delay: '650ms',
       logo: 'https://i.ibb.co/G73BgJy/podchaser.jpg'
-    },
-    { 
-      name: 'JioSaavn', 
-      color: 'from-yie-red to-yie-red/80', 
-      url: 'https://www.jiosaavn.com/shows/Yemenis-In-Exile-Podcast/1/nAIAWhpLCtg_', 
-      delay: '1400ms',
-      logo: 'https://i.ibb.co/swqHCGR/Jio-Saavn-Logo.png'
     }
   ];
 
@@ -150,14 +143,14 @@ const PodcastPlatforms: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-6 lg:justify-items-stretch">
           {platforms.map((platform, index) => (
             <a
               key={index}
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative p-8 bg-yie-dark/50 backdrop-blur-lg rounded-3xl border border-yie-red/20 hover:border-yie-red/40 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 ${isRTL ? 'text-right' : 'text-left'}`}
+              className={`group relative px-4 py-8 md:px-8 bg-yie-dark/50 backdrop-blur-lg rounded-3xl border border-yie-red/20 hover:border-yie-red/40 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 ${isRTL ? 'text-right' : ''} lg:h-full`}
               style={{ animationDelay: platform.delay }}
             >
               {/* Glow Effect */}
@@ -193,7 +186,7 @@ const PodcastPlatforms: React.FC = () => {
               </div>
               
               {/* Bottom Accent */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${platform.color} rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
+              <div className={`absolute bottom-0 inset-x-4 md:inset-x-8 h-1 bg-gradient-to-r ${platform.color} rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
             </a>
           ))}
         </div>

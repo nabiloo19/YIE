@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from '../contexts/TranslationContext';
 import { Sparkles, Heart, Globe, Users, ExternalLink } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -26,6 +26,27 @@ const About: React.FC = () => {
       color: 'from-yie-red/20 to-yie-red/5' 
     },
   ];
+
+  useEffect(() => {
+    const link = document.querySelector(
+      'a[href="https://howtobuildup.org/programs/digital-conflict/"]'
+    );
+    if (link) {
+      link.classList.remove('underline', 'decoration-yie-red', 'decoration-2', 'no-underline', 'hover:underline', 'hover:decoration-yie-red', 'hover:decoration-2');
+      link.classList.add(
+        'group/underline-link',
+        'relative',
+        'transition-all',
+        'duration-200',
+        'inline-block',
+        'text-yie-red'
+      );
+      // Wrap the text in a span for better control
+      if (!link.querySelector('span')) {
+        link.innerHTML = `<span>${link.innerHTML}</span>`;
+      }
+    }
+  }, []);
 
   return (
     <section id="about" className={cn(

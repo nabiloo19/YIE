@@ -58,7 +58,7 @@
 
 @layer utilities {
   .animate-blob {
-    animation: blob 7s infinite;
+    animation: blob 30s infinite;
   }
   
   .animate-float {

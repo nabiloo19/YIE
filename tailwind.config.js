@@ -54,7 +54,7 @@ export default {
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'marquee': 'marquee var(--duration) linear infinite',
-        'blob': 'blob 7s infinite',
+        'blob': 'blob 30s infinite',
         'gradient-x': 'gradient-x 15s ease infinite',
       },
       keyframes: {

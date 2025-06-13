@@ -18,6 +18,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <TestimonialsSection
+      id="testimonials"
       title={t('testimonials.title')}
       description={t('testimonials.subtitle')}
       testimonials={transformedTestimonials}
